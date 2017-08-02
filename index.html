@@ -1,0 +1,21 @@
+<!DOCTYPE html5>
+<html>
+<head>
+  <title>HELLO EXPRESS</title>
+</head>
+<body>
+  <button type='button' onclick="loadDoc()">post request</button>
+  <script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("demo").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("POST", "http://localhost:3000/contact", true);
+    xhttp.send();
+  }
+  </script>
+</body>
+</html>
