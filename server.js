@@ -1,5 +1,7 @@
 const express = require('express');
+const dotenv = require('dotenv').load();
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(function(req, res, next) {
   // res.header('Access-Control-Allow-Origin', '*');
@@ -17,6 +19,6 @@ app.post('/contact', function(req, res){
   res.send('post success');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(PORT, function () {
+  console.log(`App listening on port ${PORT}!`);
 });
